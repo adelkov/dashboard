@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -18,46 +18,45 @@ const styles = {
     },
 };
 
-let id = 0;
-function createData(name, calories, fat, carbs, protein) {
-    id += 1;
-    return { id, name, calories, fat, carbs, protein };
-}
-
-const data = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 function SimpleTable(props) {
-    const { classes } = props;
+    const {classes, data} = props;
 
     return (
         <Paper className={classes.root}>
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell numeric>Calories</TableCell>
-                        <TableCell numeric>Fat (g)</TableCell>
-                        <TableCell numeric>Carbs (g)</TableCell>
-                        <TableCell numeric>Protein (g)</TableCell>
+                        {
+                            data[0] && Object.keys(data[0]).map(itemName => {
+                                    if (itemName !== 'id') {
+                                        return (
+                                            <TableCell numeric={itemName !== "name"}>
+                                                {itemName}
+                                            </TableCell>
+                                        )
+                                    }
+                                }
+                            )
+                        }
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {data.map(n => {
+                    {data.map(record => {
                         return (
-                            <TableRow key={n.id}>
-                                <TableCell component="th" scope="row">
-                                    {n.name}
-                                </TableCell>
-                                <TableCell numeric>{n.calories}</TableCell>
-                                <TableCell numeric>{n.fat}</TableCell>
-                                <TableCell numeric>{n.carbs}</TableCell>
-                                <TableCell numeric>{n.protein}</TableCell>
+                            <TableRow key={record.id}>
+                                {
+                                    Object.keys(record).map(item => {
+                                            if (item !== 'id') {
+                                                return (
+                                                    <TableCell numeric={item !== "name"} component="th" scope="row">
+                                                        {record[item]}
+                                                    </TableCell>
+                                                )
+                                            }
+                                        }
+                                    )
+                                }
                             </TableRow>
                         );
                     })}
@@ -69,6 +68,7 @@ function SimpleTable(props) {
 
 SimpleTable.propTypes = {
     classes: PropTypes.object.isRequired,
+    data: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(SimpleTable);
