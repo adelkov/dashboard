@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import Dashboard from "./Components/Dashboard/Dashboard";
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
-import SimpleLineChart from "./Components/SimpleLineChart/SimpleLineChart";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import SimpleTableContainer from "./Components/SimpleTable/SimpleTableContainer";
+import SimpleLineChartContainer from "./Components/SimpleLineChart/SimpleLineChartContainer";
 
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
             <Router>
                 <Dashboard>
                     <Route path="/table" exact component={SimpleTableContainer}/>
-                    <Route path="/chart" component={SimpleLineChart}/>
+                    <Route path="/chart" component={SimpleLineChartContainer}/>
                 </Dashboard>
             </Router>
         );
