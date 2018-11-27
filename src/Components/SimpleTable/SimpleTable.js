@@ -19,47 +19,49 @@ const styles = {
 };
 
 
-function SimpleTable(props) {
-    const {classes, data} = props;
+function SimpleTable({classes, data}) {
+
+    const header = data[0] && Object.keys(data[0]).map(itemName => {
+            if (itemName !== 'id') {
+                return (
+                    <TableCell numeric={itemName !== "name"} key={itemName}>
+                        {itemName}
+                    </TableCell>
+                )
+            }
+        }
+    );
+
+    const rows = data.map(record => {
+        return (
+            <TableRow key={record.id}>
+                {
+                    Object.keys(record).map(item => {
+                            if (item !== 'id') {
+                                return (
+                                    <TableCell numeric={item !== "name"} component="th" scope="row" key={record[item]}>
+                                        {record[item]}
+                                    </TableCell>
+                                )
+                            }
+                        }
+                    )
+                }
+            </TableRow>
+        );
+    });
+
 
     return (
         <Paper className={classes.root}>
             <Table className={classes.table}>
                 <TableHead>
                     <TableRow>
-                        {
-                            data[0] && Object.keys(data[0]).map(itemName => {
-                                    if (itemName !== 'id') {
-                                        return (
-                                            <TableCell numeric={itemName !== "name"} key={itemName}>
-                                                {itemName}
-                                            </TableCell>
-                                        )
-                                    }
-                                }
-                            )
-                        }
+                        {header}
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {data.map(record => {
-                        return (
-                            <TableRow key={record.id}>
-                                {
-                                    Object.keys(record).map(item => {
-                                            if (item !== 'id') {
-                                                return (
-                                                    <TableCell numeric={item !== "name"} component="th" scope="row" key={record[item]}>
-                                                        {record[item]}
-                                                    </TableCell>
-                                                )
-                                            }
-                                        }
-                                    )
-                                }
-                            </TableRow>
-                        );
-                    })}
+                    {rows}
                 </TableBody>
             </Table>
         </Paper>

@@ -9,8 +9,8 @@ import Tooltip from 'recharts/lib/component/Tooltip';
 import Legend from 'recharts/lib/component/Legend';
 
 
-function SimpleLineChart(props) {
-    const {data} = props;
+function SimpleLineChart({data}) {
+
     return (
         // 99% per https://github.com/recharts/recharts/issues/172
         <ResponsiveContainer width="99%" height={320}>
