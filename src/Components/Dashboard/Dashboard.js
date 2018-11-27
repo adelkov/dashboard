@@ -7,6 +7,7 @@ import SimpleLineChart from '../SimpleLineChart/SimpleLineChart';
 import SimpleTable from '../SimpleTable/SimpleTable';
 import AppBarComponent from "./AppBar/AppBarComponent";
 import DrawerComponent from "./Drawer/DrawerComponent";
+import {Route} from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -58,18 +59,7 @@ class Dashboard extends React.Component {
                 />
                 <main className={classes.content}>
                     <div className={classes.appBarSpacer} />
-                    <Typography variant="h4" gutterBottom component="h2">
-                        Orders
-                    </Typography>
-                    <Typography component="div" className={classes.chartContainer}>
-                        <SimpleLineChart />
-                    </Typography>
-                    <Typography variant="h4" gutterBottom component="h2">
-                        Products
-                    </Typography>
-                    <div className={classes.tableContainer}>
-                        <SimpleTable />
-                    </div>
+                    {this.props.children}
                 </main>
             </div>
         );
