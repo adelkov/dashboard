@@ -7,6 +7,7 @@ import YAxis from 'recharts/lib/cartesian/YAxis';
 import CartesianGrid from 'recharts/lib/cartesian/CartesianGrid';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import Legend from 'recharts/lib/component/Legend';
+import PropTypes from 'prop-types';
 
 
 function SimpleLineChart({data}) {
@@ -26,5 +27,9 @@ function SimpleLineChart({data}) {
         </ResponsiveContainer>
     );
 }
+
+SimpleLineChart.propTypes = {
+    data: PropTypes.array.isRequired
+};
 
 export default SimpleLineChart;
