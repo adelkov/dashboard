@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SimpleLineChart from "./SimpleLineChart";
+import Loader from "../UI/Loader";
 
 class SimpleLineChartContainer extends Component {
 
@@ -31,7 +32,7 @@ class SimpleLineChartContainer extends Component {
         const {loading, error, data} = this.state;
 
         if (loading) {
-            return (<div>Loading...</div>)
+            return (<Loader message="Loading chart data..."/>)
         } else if (error) {
             return (<div>Error</div>)
         } else {

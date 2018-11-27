@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import SimpleTable from "./SimpleTable";
 import {fetchTableData} from '../../Api'
+import Loader from "../UI/Loader";
 
 
 class SimpleTableContainer extends Component {
@@ -29,7 +30,7 @@ class SimpleTableContainer extends Component {
         const {loading, error, data} = this.state;
 
         if (loading) {
-            return (<div>Loading...</div>)
+            return (<Loader message={"Loading table data..."}/>)
         } else if (error) {
             return (<div>Error</div>)
         } else {
