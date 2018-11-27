@@ -8,6 +8,7 @@ import {withStyles} from "@material-ui/core";
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import classNames from 'classnames';
 import AppBar from "@material-ui/core/AppBar/AppBar";
+import PropTypes from 'prop-types';
 
 
 const drawerWidth = 240;
@@ -47,7 +48,7 @@ const styles = theme => ({
 
 const AppBarComponent = (props) => {
 
-    const {classes, open, handleDrawerOpen} = props;
+    const { classes, open, handleDrawerOpen } = props;
 
     return (
         <AppBar
@@ -83,6 +84,12 @@ const AppBarComponent = (props) => {
             </Toolbar>
         </AppBar>
     );
+};
+
+AppBarComponent.propTypes = {
+    classes: PropTypes.object.isRequired,
+    open: PropTypes.bool.isRequired,
+    handleDrawerOpen: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(AppBarComponent);
