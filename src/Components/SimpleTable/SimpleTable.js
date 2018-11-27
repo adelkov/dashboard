@@ -31,7 +31,7 @@ function SimpleTable(props) {
                             data[0] && Object.keys(data[0]).map(itemName => {
                                     if (itemName !== 'id') {
                                         return (
-                                            <TableCell numeric={itemName !== "name"}>
+                                            <TableCell numeric={itemName !== "name"} key={itemName}>
                                                 {itemName}
                                             </TableCell>
                                         )
@@ -49,7 +49,7 @@ function SimpleTable(props) {
                                     Object.keys(record).map(item => {
                                             if (item !== 'id') {
                                                 return (
-                                                    <TableCell numeric={item !== "name"} component="th" scope="row">
+                                                    <TableCell numeric={item !== "name"} component="th" scope="row" key={record[item]}>
                                                         {record[item]}
                                                     </TableCell>
                                                 )
