@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import SimpleTable from "./SimpleTable";
 import {fetchTableData} from '../../Api'
 import Loader from "../UI/Loader";
+import * as constants from "../../constants";
 
 
 class SimpleTableContainer extends Component {
@@ -16,7 +17,7 @@ class SimpleTableContainer extends Component {
     }
 
     componentDidMount() {
-        fetchTableData()
+        fetchTableData(constants.tableDataURL)
             .then(response => {
                 this.setState({
                     data: response.data,
