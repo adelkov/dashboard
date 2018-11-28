@@ -3,7 +3,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import DashboardIcon from '@material-ui/icons/Dashboard';
+import PostIcon from '@material-ui/icons/TextFields';
+import CommentIcon from '@material-ui/icons/Speaker';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
@@ -13,24 +14,30 @@ import {Link} from "react-router-dom";
 
 export const mainListItems = (
     <div>
-        <ListItem button>
-            <ListItemIcon>
-                <DashboardIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Dashboard"/>
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <ShoppingCartIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Orders"/>
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <PeopleIcon/>
-            </ListItemIcon>
-            <ListItemText primary="Customers"/>
-        </ListItem>
+        <Link to="/posts">
+            <ListItem button>
+                <ListItemIcon>
+                    <PostIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Posts"/>
+            </ListItem>
+        </Link>
+        <Link to="/comments">
+            <ListItem button>
+                <ListItemIcon>
+                    <CommentIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Comments"/>
+            </ListItem>
+        </Link>
+        <Link to="/chart">
+            <ListItem button>
+                <ListItemIcon>
+                    <PeopleIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Chart demo"/>
+            </ListItem>
+        </Link>
         <ListItem button>
             <ListItemIcon>
                 <BarChartIcon/>
@@ -49,22 +56,18 @@ export const mainListItems = (
 export const secondaryListItems = (
     <div>
         <ListSubheader inset>Saved reports</ListSubheader>
-        <Link to="/table">
-            <ListItem button>
-                <ListItemIcon>
-                    <AssignmentIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Table demo"/>
-            </ListItem>
-        </Link>
-        <Link to="chart">
-            <ListItem button>
-                <ListItemIcon>
-                    <AssignmentIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Chart demo"/>
-            </ListItem>
-        </Link>
+        <ListItem button>
+            <ListItemIcon>
+                <AssignmentIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Current month"/>
+        </ListItem>
+        <ListItem button>
+            <ListItemIcon>
+                <AssignmentIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Last quarter"/>
+        </ListItem>
         <ListItem button>
             <ListItemIcon>
                 <AssignmentIcon/>

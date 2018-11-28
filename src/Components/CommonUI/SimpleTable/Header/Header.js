@@ -2,7 +2,7 @@ import React from 'react';
 import TableCell from "@material-ui/core/TableCell/TableCell";
 import TableRow from "@material-ui/core/TableRow/TableRow";
 
-const Header = (columns) => {
+const Header = ({columns}) => {
     return (
         <TableRow>
             {columns.map(title => (
