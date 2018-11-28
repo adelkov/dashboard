@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import {withStyles} from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import withAsyncData from "../../../HOCs/withAsyncData";
+import Header from "./Header/Header";
+import Body from "./Body/Body";
 
 
 const styles = {
@@ -21,38 +21,16 @@ const styles = {
 };
 
 
-function SimpleTable({classes, data}) {
-
-    const header = (
-        <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Email</TableCell>
-            <TableCell>Comment body</TableCell>
-        </TableRow>
-    );
-
-
-    const rows = data.map(n => {
-        return (
-            <TableRow key={n.id}>
-                <TableCell component="th" scope="row">
-                    {n.name}
-                </TableCell>
-                <TableCell>{n.email}</TableCell>
-                <TableCell>{n.body}</TableCell>
-            </TableRow>
-        );
-    });
-
+function SimpleTable({classes, data, columns}) {
 
     return (
         <Paper className={classes.root}>
             <Table className={classes.table}>
                 <TableHead>
-                    {header}
+                   <Header columns={columns} />
                 </TableHead>
                 <TableBody>
-                    {rows}
+                    <Body columns={columns} data={data} />
                 </TableBody>
             </Table>
         </Paper>

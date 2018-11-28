@@ -15,7 +15,7 @@ const withAsyncData = (WrappedComponent) => {
         }
 
         componentDidMount() {
-            fetchTableData(this.props.url)
+            fetchTableData(this.props.request.url)
                 .then(response => {
                     this.setState({
                         data: response.data,
@@ -31,15 +31,15 @@ const withAsyncData = (WrappedComponent) => {
             if (loading) {
                 return (<Loader message={"Loading data..."}/>)
             } else if (error) {
-                return (<div>Error</div>)
+                return (<div>Error: {error.message}</div>)
             } else {
                 return (
                     <WrappedComponent
+                        columns={this.props.request.columns}
                         data={data}
                     />
                 );
             }
-
         }
     }
 

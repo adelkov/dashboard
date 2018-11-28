@@ -1,2 +1,12 @@
+const baseURL = "https://jsonplaceholder.typicode.com/";
 
-export const tableDataURL = "https://jsonplaceholder.typicode.com/comments";
+export const comments = {
+    url: baseURL + "comments",
+    columns: ["name", "email", "body"]
+};
+
+
+export const posts = {
+    url: baseURL + "posts",
+    columns: ["title", "body"]
+};
