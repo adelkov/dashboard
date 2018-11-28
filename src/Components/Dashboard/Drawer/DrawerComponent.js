@@ -1,6 +1,6 @@
 import React from 'react';
 import IconButton from "@material-ui/core/IconButton/IconButton";
-import ChevronLeftIcon from "@material-ui/core/SvgIcon/SvgIcon";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Divider from "@material-ui/core/Divider/Divider";
 import List from "@material-ui/core/List/List";
 import {mainListItems, secondaryListItems} from "../../listItems/listItems";
@@ -45,10 +45,7 @@ const styles = theme => ({
     }
 });
 
-const DrawerComponent = (props) => {
-
-    const {classes, open, handleDrawerClose} = props;
-
+const DrawerComponent = ({classes, open, handleDrawerClose}) => {
 
     return (
         <Drawer

@@ -1,7 +1,7 @@
 import React from 'react';
 import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import IconButton from "@material-ui/core/IconButton/IconButton";
-import MenuIcon from "@material-ui/core/SvgIcon/SvgIcon";
+import MenuIcon from "@material-ui/icons/Menu";
 import Typography from "@material-ui/core/Typography/Typography";
 import Badge from "@material-ui/core/Badge/Badge";
 import {withStyles} from "@material-ui/core";
@@ -46,9 +46,8 @@ const styles = theme => ({
     appBarSpacer: theme.mixins.toolbar
 });
 
-const AppBarComponent = (props) => {
+const AppBarComponent = ({ classes, open, handleDrawerOpen }) => {
 
-    const { classes, open, handleDrawerOpen } = props;
 
     return (
         <AppBar
