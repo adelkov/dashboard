@@ -7,6 +7,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import withAsyncData from "../../../HOCs/withAsyncData";
+
 
 const styles = {
     root: {
@@ -73,4 +75,6 @@ SimpleTable.propTypes = {
     data: PropTypes.array.isRequired
 };
 
-export default withStyles(styles)(SimpleTable);
+export default withAsyncData(
+    withStyles(styles)(SimpleTable)
+)

@@ -3,7 +3,7 @@ import IconButton from "@material-ui/core/IconButton/IconButton";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import Divider from "@material-ui/core/Divider/Divider";
 import List from "@material-ui/core/List/List";
-import {mainListItems, secondaryListItems} from "../../listItems/listItems";
+import {mainListItems, secondaryListItems} from "../listItems/listItems";
 import Drawer from "@material-ui/core/Drawer/Drawer";
 import classNames from 'classnames';
 import {withStyles} from "@material-ui/core";

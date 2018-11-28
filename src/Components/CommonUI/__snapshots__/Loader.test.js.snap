@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<div>
+  Hellow Worlds!
+  <div
+    className="MuiLinearProgress-root-1 MuiLinearProgress-colorSecondary-3"
+    role="progressbar"
+  >
+    <div
+      className="MuiLinearProgress-bar-9 MuiLinearProgress-barColorSecondary-11 MuiLinearProgress-bar1Indeterminate-12"
+      style={Object {}}
+    />
+    <div
+      className="MuiLinearProgress-bar-9 MuiLinearProgress-barColorSecondary-11 MuiLinearProgress-bar2Indeterminate-15"
+      style={Object {}}
+    />
+  </div>
+</div>
+`;
+
+exports[`Loader displays its message 1`] = `
+<div>
+  http://www.facebook.com
+  <div
+    className="MuiLinearProgress-root-1 MuiLinearProgress-colorSecondary-3"
+    role="progressbar"
+  >
+    <div
+      className="MuiLinearProgress-bar-9 MuiLinearProgress-barColorSecondary-11 MuiLinearProgress-bar1Indeterminate-12"
+      style={Object {}}
+    />
+    <div
+      className="MuiLinearProgress-bar-9 MuiLinearProgress-barColorSecondary-11 MuiLinearProgress-bar2Indeterminate-15"
+      style={Object {}}
+    />
+  </div>
+</div>
+`;

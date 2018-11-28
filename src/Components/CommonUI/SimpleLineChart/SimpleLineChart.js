@@ -8,6 +8,7 @@ import CartesianGrid from 'recharts/lib/cartesian/CartesianGrid';
 import Tooltip from 'recharts/lib/component/Tooltip';
 import Legend from 'recharts/lib/component/Legend';
 import PropTypes from 'prop-types';
+import withRandomData from "../../../HOCs/withRandomData";
 
 
 function SimpleLineChart({data}) {
@@ -32,4 +33,4 @@ SimpleLineChart.propTypes = {
     data: PropTypes.array.isRequired
 };
 
-export default SimpleLineChart;
+export default withRandomData(SimpleLineChart)

@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-const url = "https://jsonplaceholder.typicode.com/posts";
 
-export const fetchTableData = async () => {
+export const fetchTableData = async (url) => {
     try {
         const {data} = await axios.get(url);
         return {
