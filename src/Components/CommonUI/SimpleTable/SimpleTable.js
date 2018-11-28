@@ -23,32 +23,23 @@ const styles = {
 
 function SimpleTable({classes, data}) {
 
-    const header = data[0] && Object.keys(data[0]).map(itemName => {
-            if (itemName !== 'id') {
-                return (
-                    <TableCell numeric={itemName !== "name"} key={itemName}>
-                        {itemName}
-                    </TableCell>
-                )
-            }
-        }
+    const header = (
+        <TableRow>
+            <TableCell>Name</TableCell>
+            <TableCell>Email</TableCell>
+            <TableCell>Comment body</TableCell>
+        </TableRow>
     );
 
-    const rows = data.map(record => {
+
+    const rows = data.map(n => {
         return (
-            <TableRow key={record.id}>
-                {
-                    Object.keys(record).map(item => {
-                            if (item !== 'id') {
-                                return (
-                                    <TableCell numeric={item !== "name"} component="th" scope="row" key={record[item]}>
-                                        {record[item]}
-                                    </TableCell>
-                                )
-                            }
-                        }
-                    )
-                }
+            <TableRow key={n.id}>
+                <TableCell component="th" scope="row">
+                    {n.name}
+                </TableCell>
+                <TableCell>{n.email}</TableCell>
+                <TableCell>{n.body}</TableCell>
             </TableRow>
         );
     });
@@ -58,9 +49,7 @@ function SimpleTable({classes, data}) {
         <Paper className={classes.root}>
             <Table className={classes.table}>
                 <TableHead>
-                    <TableRow>
-                        {header}
-                    </TableRow>
+                    {header}
                 </TableHead>
                 <TableBody>
                     {rows}
