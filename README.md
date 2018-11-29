@@ -17,15 +17,6 @@ open at http://localhost:3000
 ```
 
 
-### Running the tests
-
-Tests are implemented via Jest.
-Tests include a snapshot test for the Loader component.
-```
-$ npm test
-```
-
-
 ### Built With
 
 [create-react-app](https://github.com/facebook/create-react-app) 
