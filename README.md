@@ -2,6 +2,11 @@
 
 A custom implementation of Material UI's dashboard template.
 
+### Deployment
+
+This app is deployed [here](https://dash-project-581d3.firebaseapp.com/).
+
+
 ### Installing on-premises
 
 
