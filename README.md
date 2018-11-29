@@ -2,10 +2,6 @@
 
 A custom implementation of Material UI's dashboard template.
 
-### Deployment
-
-A demo for this project is deployed at @
-
 ### Installing on-premises
 
 
