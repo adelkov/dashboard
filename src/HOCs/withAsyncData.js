@@ -1,6 +1,6 @@
 import React from 'react';
 import Loader from "../Components/CommonUI/Loader/Loader";
-import {fetchTableData} from "../utils/api";
+import {fetchTableData} from "../Services/api/api";
 import Typography from "@material-ui/core/Typography/Typography";
 
 const withAsyncData = (WrappedComponent) => {
@@ -15,15 +15,13 @@ const withAsyncData = (WrappedComponent) => {
             }
         }
 
-        componentDidMount() {
-            fetchTableData(this.props.request.url)
-                .then(response => {
-                    this.setState({
-                        data: response.data,
-                        error: response.error,
-                        loading: false
-                    })
-                });
+        async componentDidMount() {
+            const response = await fetchTableData(this.props.request.url);
+            this.setState({
+                data: response.data,
+                error: response.error,
+                loading: false
+            })
         }
 
         render() {

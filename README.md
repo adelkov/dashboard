@@ -2,10 +2,6 @@
 
 A custom implementation of Material UI's dashboard template.
 
-### Deployment
-
-A demo for this project is deployed at @
-
 ### Installing on-premises
 
 
@@ -15,16 +11,6 @@ $ npm install
 $ npm start
 open at http://localhost:3000
 ```
-
-
-### Running the tests
-
-Tests are implemented via Jest.
-Tests include a snapshot test for the Loader component.
-```
-$ npm test
-```
-
 
 ### Built With
 
