@@ -11,7 +11,9 @@ $ npm install
 $ npm start
 open at http://localhost:3000
 ```
+### Deployment
 
+Deployed at: https://dash-project-581d3.firebaseapp.com
 
 ### Built With
 
