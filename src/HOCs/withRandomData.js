@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from "@material-ui/core/Button/Button";
+import Typography from "@material-ui/core/Typography/Typography";
 
 const withRandomData = (WrappedComponent) => {
     class HOC extends React.Component {
@@ -28,6 +29,9 @@ const withRandomData = (WrappedComponent) => {
 
             return (
                 <div>
+                    <Typography variant="h4" gutterBottom component="h2">
+                        Chart data
+                    </Typography>
                     <WrappedComponent
                         data={data}
                     />

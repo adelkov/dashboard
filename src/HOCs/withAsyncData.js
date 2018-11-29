@@ -1,6 +1,7 @@
 import React from 'react';
 import Loader from "../Components/CommonUI/Loader/Loader";
 import {fetchTableData} from "../utils/api";
+import Typography from "@material-ui/core/Typography/Typography";
 
 const withAsyncData = (WrappedComponent) => {
     class HOC extends React.Component {
@@ -27,6 +28,7 @@ const withAsyncData = (WrappedComponent) => {
 
         render() {
             const {loading, error, data} = this.state;
+            const {title, columns} = this.props.request;
 
             if (loading) {
                 return (<Loader message={"Loading data..."}/>)
@@ -34,10 +36,15 @@ const withAsyncData = (WrappedComponent) => {
                 return (<div>Error: {error.message}</div>)
             } else {
                 return (
-                    <WrappedComponent
-                        columns={this.props.request.columns}
-                        data={data}
-                    />
+                    <>
+                        <Typography variant="h4" gutterBottom component="h2">
+                            {title}
+                        </Typography>
+                        <WrappedComponent
+                            columns={columns}
+                            data={data}
+                        />
+                    </>
                 );
             }
         }
