@@ -26,7 +26,6 @@ const withAsyncData = (WrappedComponent) => {
         }
 
         render() {
-            console.log(this.props)
             const {loading, error, data} = this.state;
             const {title, columns} = this.props.request;
 
