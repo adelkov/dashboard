@@ -22,7 +22,6 @@ const styles = {
 
 
 function SimpleTable({classes, data, columns}) {
-
     return (
         <Paper className={classes.root}>
             <Table className={classes.table}>

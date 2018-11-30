@@ -16,6 +16,7 @@ const withAsyncData = (WrappedComponent) => {
         }
 
         async componentDidMount() {
+
             const response = await fetchTableData(this.props.request.url);
             this.setState({
                 data: response.data,
@@ -25,6 +26,7 @@ const withAsyncData = (WrappedComponent) => {
         }
 
         render() {
+            console.log(this.props)
             const {loading, error, data} = this.state;
             const {title, columns} = this.props.request;
 

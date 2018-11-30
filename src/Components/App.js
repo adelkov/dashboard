@@ -18,11 +18,13 @@ class App extends Component {
                         <Route path="/" exact component={Home}/>
                         <Route
                             path="/comments"
-                            render={() => <SimpleTable request={requests.comments}/>}
+                            component={() =>
+                                (<SimpleTable request={requests.comments} />)}
                         />
                         <Route
                             path="/posts"
-                            render={() => <SimpleTable request={requests.posts}/>}
+                            component={() =>
+                                (<SimpleTable request={requests.posts} />)}
                         />
                         <Route
                             path="/chart"
